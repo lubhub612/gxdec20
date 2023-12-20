@@ -147,6 +147,7 @@ export const App = () => {
   return (
     <>
     <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>
        <Header theme={theme} toggleTheme={toggleTheme} />
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />}></Route>
@@ -240,6 +241,7 @@ export const App = () => {
       </Routes>
       <ToastListener />
       <Footer theme={theme} toggleTheme={toggleTheme} />
+      </RainbowKitProvider>
       </WagmiConfig>
      {/* <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
      </>
