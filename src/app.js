@@ -43,6 +43,11 @@ import { Reward } from "./pages/Reward";
 import { BuyToken } from "./pages/BuyToken";
 import { Transactions } from "./pages/Transactions";
 
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import {  createConfig, configureChains, WagmiConfig } from 'wagmi'
