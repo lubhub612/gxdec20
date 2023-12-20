@@ -90,10 +90,15 @@ const { chains, publicClient } = configureChains(
     publicProvider()
   ]
 );
-
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  projectId: projectId,
+  chains
+});
 const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors: w3mConnectors({ projectId, chains }),
+  connectors,
+ // connectors: w3mConnectors({ projectId, chains }),
   publicClient
 })  
 
