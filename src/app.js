@@ -84,7 +84,7 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)  */
 const projectId = '5617cf9a0fa15b77934dc64c33693c27'
 
 const { chains, publicClient } = configureChains(
-  [mainnet, polygon, optimism, arbitrum, base, zora],
+  [ polygon, optimism, arbitrum, base, zora],
   [
    // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()
