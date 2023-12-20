@@ -92,36 +92,26 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)  */
 
 const projectId = '5617cf9a0fa15b77934dc64c33693c27'
 
-const { chains, publicClient } = configureChains(
+const { chains, publicClient, webSocketPublicClient  } = configureChains(
   [ mainnet, polygon, bsc, optimism, arbitrum, base, zora],
   [
    // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()
   ]
 );
-/*const { connectors } = getDefaultWallets({
+const { connectors } = getDefaultWallets({
   appName: 'RainbowKit demo',
   projectId: projectId,
   chains
-}); */
-const connectors = connectorsForWallets([
-  {
-    groupName: 'Suggested',
-    wallets: [
-      injectedWallet({ chains }),
-      rainbowWallet({ projectId, chains }),
-      metaMaskWallet({ projectId, chains }),
-      coinbaseWallet({ chains, appName: 'My RainbowKit App' }),
-      walletConnectWallet({ projectId, chains }),
-    ],
-  },
-]);
+}); 
+
 
 const wagmiConfig = createConfig({
   autoConnect: true,
  connectors,
  // connectors: w3mConnectors({ projectId, chains }),
-  publicClient
+  publicClient,
+  webSocketPublicClient 
 })  
 
 //const ethereumClient = new EthereumClient(wagmiConfig, chains) 
