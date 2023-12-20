@@ -66,6 +66,7 @@ import {
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
+/*
 const chains = [arbitrum, bsc,  mainnet, polygon ]
 
 const projectId = '5617cf9a0fa15b77934dc64c33693c27'
@@ -77,7 +78,30 @@ const wagmiConfig = createConfig({
   connectors: w3mConnectors({ projectId, chains }),
   publicClient
 })  
-const ethereumClient = new EthereumClient(wagmiConfig, chains) 
+const ethereumClient = new EthereumClient(wagmiConfig, chains)  */
+
+
+const projectId = '5617cf9a0fa15b77934dc64c33693c27'
+
+const { chains, publicClient } = configureChains(
+  [mainnet, polygon, optimism, arbitrum, base, zora],
+  [
+   // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
+    publicProvider()
+  ]
+);
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  projectId: projectId,
+  chains
+});
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient
+})
+
+
 
 export const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -203,7 +227,7 @@ export const App = () => {
       <ToastListener />
       <Footer theme={theme} toggleTheme={toggleTheme} />
       </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> 
+     {/*} <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
      </>
   );
 };
