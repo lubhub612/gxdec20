@@ -100,7 +100,7 @@ const { chains, publicClient, webSocketPublicClient  } = configureChains(
   ]
 );
 const { connectors } = getDefaultWallets({
-  appName: 'RainbowKit demo',
+  appName: 'hyperx-nft-marketplace',
   projectId: projectId,
   chains
 }); 
