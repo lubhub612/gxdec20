@@ -51,7 +51,20 @@ import {
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import {  createConfig, configureChains, WagmiConfig } from 'wagmi'
-import { arbitrum, bsc,  mainnet, polygon } from 'wagmi/chains'
+//import { arbitrum, bsc,  mainnet, polygon } from 'wagmi/chains'
+
+import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  base,
+  zora,
+  bsc
+} from 'wagmi/chains';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
 
 const chains = [arbitrum, bsc,  mainnet, polygon ]
 
