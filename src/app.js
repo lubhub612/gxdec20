@@ -90,16 +90,26 @@ const { chains, publicClient } = configureChains(
     publicProvider()
   ]
 );
-const { connectors } = getDefaultWallets({
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors: w3mConnectors({ projectId, chains }),
+  publicClient
+})  
+
+const ethereumClient = new EthereumClient(wagmiConfig, chains) 
+
+/*const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
   projectId: projectId,
   chains
 });
+
 const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
   publicClient
-})
+})  */
 
 
 
@@ -227,7 +237,7 @@ export const App = () => {
       <ToastListener />
       <Footer theme={theme} toggleTheme={toggleTheme} />
       </WagmiConfig>
-     {/*} <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
+      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> 
      </>
   );
 };
