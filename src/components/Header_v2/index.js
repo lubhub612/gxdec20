@@ -25,7 +25,8 @@ import UserAvatar from "../Shared/UserAvatar";
 import { useCustomWallet } from "../../contexts/WalletContext";
 import { useGlobal } from "../../contexts/GlobalContext";
 
-import { Web3Button } from '@web3modal/react';
+///import { Web3Button } from '@web3modal/react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
 
 import {
@@ -1208,7 +1209,7 @@ export const Header = ({ theme, toggleTheme }) => {
             </li>
             <li className="active" >
            
-            <Web3Button />
+            <ConnectButton />
             
             </li>
             <li className="active" onClick={showDrawer3}>
