@@ -100,7 +100,7 @@ const { chains, publicClient, webSocketPublicClient  } = configureChains(
   ]
 );
 const { connectors } = getDefaultWallets({
-  appName: 'hyperx-nft-marketplace',
+  appName: 'GX NFT Marketplace',
   projectId: projectId,
   chains
 }); 
