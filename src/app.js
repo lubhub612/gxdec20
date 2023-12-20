@@ -102,7 +102,7 @@ const wagmiConfig = createConfig({
   publicClient
 })  
 
-const ethereumClient = new EthereumClient(wagmiConfig, chains) 
+//const ethereumClient = new EthereumClient(wagmiConfig, chains) 
 
 /*const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
@@ -147,8 +147,7 @@ export const App = () => {
   return (
     <>
     <WagmiConfig config={wagmiConfig}>
-     
-      <Header theme={theme} toggleTheme={toggleTheme} />
+       <Header theme={theme} toggleTheme={toggleTheme} />
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />}></Route>
         <Route exact path="/explorer" element={<Home />}></Route>
@@ -242,7 +241,7 @@ export const App = () => {
       <ToastListener />
       <Footer theme={theme} toggleTheme={toggleTheme} />
       </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> 
+     {/* <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> */}
      </>
   );
 };
