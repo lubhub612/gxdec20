@@ -1,0 +1,11 @@
+.ant-dropdown-menu-title-content {
+  /* background-color: #2a3136 !important; */
+  color: var(--text-color) !important ;
+  /* text-align: center; */
+  line-height: 28px;
+  padding: 0;
+}
+
+.ant-select-dropdown {
+  width: 160px !important;
+}

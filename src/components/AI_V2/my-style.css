@@ -1,0 +1,20 @@
+.faq-area {
+  font-family: Rajdhani, sans-serif !important;
+  color: #d6d8da !important;
+}
+.dropdown-wrapper {
+  font-size: 24px !important;
+}
+.dropdown-wrapper .ant-dropdown-menu-title-content {
+  /* background-color: #2a3136 !important; */
+  color: var(--text-color) !important ;
+  /* text-align: center; */
+  padding: 0;
+  font-weight: 700 !important;
+  line-height: 30px;
+  font-size: 24px !important;
+}
+
+.ant-select-dropdown {
+  width: 160px !important;
+}

@@ -1,0 +1,178 @@
+:root {
+  --body: #14161f;
+  --dark-bg: #121619;
+  --input-bg: #21242b;
+  --input-text: #697077;
+  --text-color: #fff;
+  --menu-hover-color: #293136;
+  --hero-bg: #21252b;
+  --button-bg: #f3f3f8;
+  --button-text: #000;
+  --button-hover-bg: #c7c7cc;
+  --hero-text: #bebfc3;
+  --border-color: #293136;
+  --reward-color: #adadb2;
+  --tab-hover: #1a1e22;
+  --apy-bg-gradient: linear-gradient(to top, #21242a, #14161f 100%);
+  --collection-bg: #1f242a;
+  --token-bg: #21262a;
+  --token-coin-bg: #ffffff1f;
+  --ai-top-bg: #0e1220;
+  --ai-bottom-bg: #0d0f1b;
+  --ai-button: #34396a;
+  --ai-button-no-active: #1a1e2d;
+  --collect-gradient: linear-gradient(to bottom right, #163188, #121619);
+}
+
+[data-theme="light"] {
+  --body: #ffffff;
+  --dark-bg: #ffffff;
+  --input-bg: #f3f3f8;
+  --input-text: #8a8c95;
+  --text-color: #2a3136;
+  --menu-hover-color: #dedee3;
+  --hero-bg: #ffffff;
+  --button-bg: #121619;
+  --button-text: #ffffff;
+  --button-hover-bg: #293136;
+  --hero-text: #394044;
+  --border-color: #e5e5ea;
+  --reward-color: #2a3136;
+  --tab-hover: #ebebf1;
+  --apy-bg-gradient: linear-gradient(to top, #f3f3f8, #fff 100%);
+  --collection-bg: #f4f5f9;
+  --token-bg: #f3f5f7;
+  --token-coin-bg: #00000012;
+  --ai-top-bg: #f6f6f6;
+  --ai-bottom-bg: #fcfcff;
+  --ai-button: #121619;
+  --ai-button-no-active: #e8e8e8;
+  --collect-gradient: linear-gradient(to bottom right, #3f6cff, #0067b5);
+}
+
+.sub-heading {
+  font-size: 18px;
+}
+.list-action {
+  height: 20px;
+  width: 20px;
+  color: var(--text-color);
+}
+ul.ant-dropdown-menu {
+  background: var(--input-bg) !important;
+}
+
+ul.ant-dropdown-menu li a {
+  color: var(--text-color) !important;
+  padding: 12px 17px !important;
+  display: block;
+}
+
+ul.ant-dropdown-menu li a:hover {
+  background: var(--tab-hover);
+}
+
+ul.ant-dropdown-menu li {
+  padding: 0 !important;
+}
+.ant-drawer-wrapper-body {
+  background: var(--input-bg);
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-drawer .ant-drawer-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-drawer .ant-drawer-title {
+  color: var(--text-color);
+}
+
+.text-white {
+  color: var(--text-color);
+}
+.active-cursor {
+  cursor: pointer;
+}
+.va-middle {
+  vertical-align: middle;
+}
+.fx-gap10 {
+  gap: 10px;
+}
+.fx-item-center {
+  align-items: center;
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-close-x {
+  background: #37393f;
+  color: var(--text-color);
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-close-x svg {
+  font-size: 14px;
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-content,
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-title {
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-close {
+  right: 25px;
+}
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper {
+  background: transparent;
+  border-color: var(--border-color);
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper
+  > input.ant-input {
+  background: transparent;
+  color: var(--text-color);
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-group-wrapper {
+  margin-top: 20px;
+}
+
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper
+  > input.ant-input::placeholder {
+  color: #697077;
+}
+
+span.ant-input-group-addon button,
+:where(.css-dev-only-do-not-override-yp8pcc).ant-btn-primary:not(
+    :disabled
+  ):hover {
+  background: transparent;
+  color: #000;
+}
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper:focus,
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper-focused,
+:where(.css-dev-only-do-not-override-yp8pcc).ant-input-affix-wrapper:not(
+    .ant-input-affix-wrapper-disabled
+  ):hover {
+  border-color: transparent;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-close-x {
+  background: var(--menu-hover-color);
+  color: var(--text-color);
+}
+:where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-close:hover {
+  background: transparent;
+}
+:where(.css-dev-only-do-not-override-yp8pcc).ant-collapse {
+  background: transparent;
+}
