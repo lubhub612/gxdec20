@@ -43,42 +43,23 @@ import { Reward } from "./pages/Reward";
 import { BuyToken } from "./pages/BuyToken";
 import { Transactions } from "./pages/Transactions";
 
-import '@rainbow-me/rainbowkit/styles.css';
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-} from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import {
-  mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
-  zora,
-} from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
+import { Web3Modal } from '@web3modal/react'
+import {  createConfig, configureChains, WagmiConfig } from 'wagmi'
+import { arbitrum, bsc,  mainnet, polygon } from 'wagmi/chains'
 
+const chains = [arbitrum, bsc,  mainnet, polygon ]
 
 const projectId = '5617cf9a0fa15b77934dc64c33693c27'
 
-const { chains, publicClient } = configureChains(
-  [mainnet, polygon, optimism, arbitrum, base, zora],
-  [
-    publicProvider()
-  ]
-);
-const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
-  projectId: projectId,
-  chains
-});
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
+
 const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors,
+  connectors: w3mConnectors({ projectId, chains }),
   publicClient
-})
+})  
+const ethereumClient = new EthereumClient(wagmiConfig, chains) 
 
 export const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -109,7 +90,7 @@ export const App = () => {
   return (
     <>
     <WagmiConfig config={wagmiConfig}>
-     <RainbowKitProvider chains={chains}>
+     
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />}></Route>
@@ -203,8 +184,8 @@ export const App = () => {
       </Routes>
       <ToastListener />
       <Footer theme={theme} toggleTheme={toggleTheme} />
-       </RainbowKitProvider> 
       </WagmiConfig>
+      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} /> 
      </>
   );
 };
