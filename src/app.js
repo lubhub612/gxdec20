@@ -99,11 +99,22 @@ const { chains, publicClient, webSocketPublicClient  } = configureChains(
     publicProvider()
   ]
 );
-const { connectors } = getDefaultWallets({
+/*const { connectors } = getDefaultWallets({
   appName: 'GX NFT Marketplace',
   projectId: projectId,
   chains
-}); 
+}); */
+
+const connectors = connectorsForWallets([
+  {
+    groupName: 'Recommended',
+    wallets: [
+      injectedWallet({ chains }),
+      rainbowWallet({ projectId, chains }),
+      walletConnectWallet({ projectId, chains }),
+    ],
+  },
+]);
 
 
 const wagmiConfig = createConfig({
@@ -111,7 +122,7 @@ const wagmiConfig = createConfig({
  connectors,
  // connectors: w3mConnectors({ projectId, chains }),
   publicClient,
-  webSocketPublicClient 
+//  webSocketPublicClient 
 })  
 
 //const ethereumClient = new EthereumClient(wagmiConfig, chains) 
