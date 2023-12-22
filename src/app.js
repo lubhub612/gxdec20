@@ -111,6 +111,13 @@ const connectors = connectorsForWallets([
     wallets: [
       injectedWallet({ chains }),
       rainbowWallet({ projectId, chains }),
+      metaMaskWallet({ projectId, chains }),
+    ],
+  },
+  {
+    groupName: 'Others',
+    wallets: [
+      coinbaseWallet({ chains, appName: 'My RainbowKit App' }),
       walletConnectWallet({ projectId, chains }),
     ],
   },
